@@ -4,7 +4,7 @@
 
 #l:: ;Win+L
   CloseOBS() ; this is due to for some reason on my system sleeping pc causes a memory leak in obs, so this closes it
-  RunOBSOpenerIfNotRunning(); due to said above memory leak this runs another script to open a shortcut .lnk file to it with the params(for some reason it doesnt liek running directly from ahk)
+  RunOBSOpenerIfNotRunning() ; due to said above memory leak this runs another script to open a shortcut .lnk file to it with the params(for some reason it doesnt liek running directly from ahk)
   Sleep, 3000
   DllCall("PowrProf\SetSuspendState", "int", 0, "int", 1, "int", 0);
   Return
@@ -48,4 +48,5 @@ RunOBSOpenerIfNotRunning() {
         }
         Run, %appdata%\Microsoft\Windows\Start Menu\Programs\Startup\OBSOpener.ahk
     }
+
 }
